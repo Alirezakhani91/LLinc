@@ -1050,3 +1050,22 @@ a.w-webflow-badge, .w-webflow-badge { display: none !important; }
     margin: 0 !important;
   }
 }
+
+
+/* V8 — Tighten only the last dark footer on mobile across all pages.
+   Avoid touching the photographic 'footer--contact' gallery on Home. */
+@media screen and (max-width: 767px) {
+  div.footer--contact.footer---contact {
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: none !important;
+  }
+  div.footer--contact.footer---contact > .container.padding-4-5rem {
+    height: auto !important;
+    min-height: 0 !important;
+    padding-bottom: 18px !important;
+  }
+  div.footer--contact.footer---contact .footer-bottom {
+    padding-bottom: 14px !important;
+  }
+}
