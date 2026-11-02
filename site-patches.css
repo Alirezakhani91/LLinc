@@ -682,3 +682,97 @@ a.w-webflow-badge, .w-webflow-badge { display: none !important; }
     padding: 0 !important;
   }
 }
+
+
+/* Landmark Living — About page mobile: prevent two adjacent narrative panels
+   from stacking on top of each other. 02 Nov 2026, V4.
+   The original Webflow mobile rules have top:-200px on div-block-6 and
+   heading-18, top:119px on section-8, margins up to -200px on images,
+   and a 200px bottom margin. Keep the sections in natural document flow. */
+@media screen and (max-width: 767px) {
+  .body-2 > .section-8 {
+    display: flex !important;
+    position: relative !important;
+    inset: auto !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 26px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    min-height: 0 !important;
+    margin: 0 !important;
+    padding: 38px clamp(18px, 5vw, 28px) 50px !important;
+    font-size: inherit !important;
+    line-height: normal !important;
+    overflow: hidden !important;
+  }
+
+  .body-2 > .section-8 > .div-block-6 {
+    position: relative !important;
+    inset: auto !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    gap: 20px !important;
+    flex: 0 0 auto !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    min-height: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .body-2 > .section-8 .image-36 {
+    display: block !important;
+    position: static !important;
+    inset: auto !important;
+    flex: 0 0 auto !important;
+    width: 76px !important;
+    max-width: 76px !important;
+    height: auto !important;
+    margin: 0 auto !important;
+    padding: 0 !important;
+  }
+
+  .body-2 > .section-8 .heading-18 {
+    display: block !important;
+    position: static !important;
+    inset: auto !important;
+    width: 100% !important;
+    max-width: 440px !important;
+    height: auto !important;
+    margin: 0 auto !important;
+    padding: 0 !important;
+    font-size: clamp(15px, 3.9vw, 17px) !important;
+    line-height: 1.6 !important;
+    font-weight: 400 !important;
+    text-align: left !important;
+    overflow-wrap: break-word;
+  }
+
+  .body-2 > .section-8 > .div-block-13 {
+    display: block !important;
+    position: relative !important;
+    inset: auto !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    min-height: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .body-2 > .section-8 .image-35 {
+    display: block !important;
+    position: relative !important;
+    inset: auto !important;
+    width: min(100%, 440px) !important;
+    max-width: 100% !important;
+    height: auto !important;
+    margin: 0 auto !important;
+    padding: 0 !important;
+  }
+}
