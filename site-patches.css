@@ -553,3 +553,132 @@ a.w-webflow-badge, .w-webflow-badge { display: none !important; }
     overflow-wrap: break-word;
   }
 }
+
+/* Landmark Living — Home mobile spacing and overlap correction (V3)
+   Scope: Home only, phone widths only. Keep desktop and Webflow interactions intact.
+   Root causes: the legacy mobile layout left a 40%-height gallery section,
+   a -200px gallery-container margin, and a -200px positioned next panel. */
+@media screen and (max-width: 767px) {
+  /* The upper four-image project gallery must end where its content ends.
+     Its former percentage height created a large empty grey area. */
+  .body > section.footer--contact.footer---contact {
+    position: relative !important;
+    inset: auto !important;
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: none !important;
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+    padding: 0 !important;
+  }
+  .body > section.footer--contact.footer---contact > .container-3 {
+    position: relative !important;
+    inset: auto !important;
+    width: 100% !important;
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: none !important;
+    margin: 0 auto !important;
+    padding: 24px 0 0 !important;
+  }
+  .body > section.footer--contact.footer---contact .container-3 > .image-26 {
+    position: relative !important;
+    inset: auto !important;
+    width: min(90%, 390px) !important;
+    max-width: 90% !important;
+    height: auto !important;
+    padding: 0 !important;
+    margin: 0 auto 18px !important;
+  }
+  .body > section.footer--contact.footer---contact .slider-3 {
+    position: relative !important;
+    inset: auto !important;
+    margin: 0 auto !important;
+  }
+
+  /* Modern Layouts should follow immediately after the gallery. The V2
+     content order/size stays the same; only excessive section gaps shrink. */
+  .body > .section-6 {
+    margin: 0 !important;
+    padding-top: 30px !important;
+    padding-bottom: 36px !important;
+  }
+  .body > .section-6 .div-block-11 {
+    gap: 20px !important;
+  }
+
+  /* Community CTA had height:200px plus a -173px top offset; the child had
+     top:-200px, covering the bottom of the previous image. Restore normal flow. */
+  .body > .section-7 {
+    display: block !important;
+    position: relative !important;
+    inset: auto !important;
+    width: 100% !important;
+    height: auto !important;
+    min-height: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: hidden !important;
+  }
+  .body > .section-7 > .div-block-12 {
+    display: flex !important;
+    position: relative !important;
+    inset: auto !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    gap: 10px !important;
+    width: 100% !important;
+    height: auto !important;
+    min-height: 0 !important;
+    margin: 0 !important;
+    padding: 38px 18px 42px !important;
+    text-align: center !important;
+  }
+  .body > .section-7 .heading-53,
+  .body > .section-7 .heading-54 {
+    position: static !important;
+    inset: auto !important;
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    font-size: clamp(18px, 4.7vw, 25px) !important;
+    line-height: 1.3 !important;
+    text-align: center !important;
+  }
+  .body > .section-7 .link-5 {
+    position: static !important;
+    inset: auto !important;
+    display: inline-block !important;
+    width: auto !important;
+    height: auto !important;
+    margin: 10px auto 8px !important;
+    padding: 0 !important;
+    font-size: clamp(17px, 4.4vw, 22px) !important;
+    line-height: 1.4 !important;
+    text-align: center !important;
+  }
+  .body > .section-7 .flex-block {
+    display: block !important;
+    position: relative !important;
+    inset: auto !important;
+    width: min(100%, 440px) !important;
+    height: auto !important;
+    max-width: 100% !important;
+    margin: 14px auto 0 !important;
+    padding: 0 !important;
+  }
+  .body > .section-7 .image-30 {
+    display: block !important;
+    position: static !important;
+    inset: auto !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+}
