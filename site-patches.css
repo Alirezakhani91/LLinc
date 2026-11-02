@@ -1,2 +1,347 @@
-/* Brand badge disabled on self-hosted version. No layout/animation edits. */
-a.w-webflow-badge, .w-webflow-badge {display:none!important;}
+/* LANDMARK LIVING — responsive correction layer
+   This file is intentionally loaded AFTER the original Webflow CSS.
+   Desktop >= 992px and Webflow animation/slider scripts are untouched.
+*/
+
+/* Self-hosted website: do not show the Webflow promotional badge. */
+a.w-webflow-badge, .w-webflow-badge { display: none !important; }
+
+@media screen and (max-width: 991px) {
+  /* Keep the document itself inside the physical screen. Slider tracks are
+     allowed to move INSIDE their masks, but cannot enlarge the page. */
+  html, body { width: 100%; max-width: 100%; overflow-x: hidden !important; overflow-x: clip !important; }
+  body { min-width: 0; }
+  *, *::before, *::after { box-sizing: border-box; }
+  img, svg, video, iframe { max-width: 100%; }
+  .w-slider, .w-slider-mask { max-width: 100%; }
+
+  /* Tablet nav: the original absolute offsets can send the hamburger offscreen. */
+  .navbar {
+    width: 100%;
+    max-width: 100%;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    padding-left: clamp(14px, 4vw, 28px) !important;
+    padding-right: clamp(14px, 4vw, 28px) !important;
+  }
+  /* The original logo had a -200px margin on narrow viewports. */
+  .navbar .nav-menu {
+    background-color: #e7e7e7 !important;
+  }
+  .navbar .nav-menu .nav-link,
+  .navbar .nav-menu .nav-link.w--current {
+    color: #292929 !important;
+    -webkit-text-fill-color: #292929 !important;
+  }
+  .navbar .image-31 {
+    display: block !important;
+    position: relative !important;
+    inset: auto !important;
+    width: clamp(134px, 36vw, 190px) !important;
+    max-width: 45% !important;
+    height: auto !important;
+    margin: 0 !important;
+    flex: 0 0 auto;
+  }
+  .navbar .nav-container.w-container {
+    position: static !important;
+    width: auto !important;
+    max-width: calc(100% - 3.5rem) !important;
+    margin: 0 0 0 auto !important;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+  /* Home: second, four-picture carousel was hard-coded at 800px wide. */
+  .body .footer--contact.footer---contact,
+  .body .footer--contact .container-3,
+  .body .slider-3,
+  .body .slider-3 .mask-2,
+  .body .slider-3 .w-slide {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+  .body .footer--contact.footer---contact,
+  .body .footer--contact .container-3 {
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+  .body .slider-3 {
+    position: relative !important;
+    left: auto !important;
+    right: auto !important;
+    margin: 0 auto !important;
+  }
+  .body .slider-3 .mask-2 { left: 0 !important; right: auto !important; overflow: hidden !important; }
+  .body .slider-3 .image-25 {
+    display: block;
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto;
+    object-fit: cover;
+  }
+
+  /* Tall 800px panels in the desktop Home composition must fit on tablet. */
+  .body .section-4 .card-flex,
+  .body .section-4 .large-card,
+  .body .section-4 .features-image-wrapper,
+  .body .section-6 .div-block-11,
+  .body .section-7 .div-block-12 {
+    max-width: 100% !important;
+  }
+  .body .section-4 .image-6,
+  .body .section-6 .image-27,
+  .body .footer--contact .image-26 {
+    max-width: 100% !important;
+    height: auto;
+  }
+
+  /* Other pages: keep wide original project illustrations/title within tablet. */
+  .body-3 .heading-44 {
+    width: min(100%, 900px) !important;
+    max-width: 100% !important;
+    left: auto !important;
+    right: auto !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+  .body-3 .image-51,
+  .body-3 .image-61,
+  .body-2 img {
+    max-width: 100% !important;
+    height: auto;
+  }
+}
+
+@media screen and (max-width: 991px) {
+  /* First impression: a stable, full-height hero without sideways movement. */
+  .body .slider-7 {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: 100vh !important;
+    height: 100svh !important;
+    overflow: hidden !important;
+  }
+  .body .slider-7 .mask-5 {
+    width: 100% !important;
+    height: 100% !important;
+    overflow: hidden !important;
+  }
+  .body .slider-7 .w-slide {
+    width: 100% !important;
+    height: 100% !important;
+    overflow: hidden !important;
+  }
+  .body .slider-7 .w-slide > div:first-child {
+    width: 100% !important;
+    height: 100% !important;
+    overflow: hidden !important;
+  }
+
+  /* The artwork panels contain the actual original text and frame.
+     Center the complete Webflow image, without editing or replacing it.
+     Do NOT override opacity/transform: they belong to Webflow interactions. */
+  .body .slider-7 .w-slide > div:nth-child(2) {
+    position: absolute !important;
+    inset: 0 !important;
+    top: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    left: 0 !important;
+    float: none !important;
+    clear: none !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    height: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    pointer-events: none;
+    z-index: 2;
+  }
+  .body .slider-7 .w-slide > div:nth-child(2) > .image-46 {
+    display: block !important;
+    position: relative !important;
+    inset: auto !important;
+    float: none !important;
+    clear: none !important;
+    flex: 0 0 auto;
+    width: min(70vw, 370px) !important;
+    max-width: 76% !important;
+    height: auto !important;
+    margin: 0 !important;
+  }
+  .body .slider-7 > .w-slider-arrow-left,
+  .body .slider-7 > .w-slider-arrow-right {
+    width: 13% !important;
+    max-width: 54px !important;
+    top: 0 !important;
+    bottom: 0 !important;
+    height: 100% !important;
+    margin: auto 0 !important;
+    z-index: 4;
+  }
+  .body .slider-7 > .w-slider-arrow-left { left: 1.5% !important; right: auto !important; }
+  .body .slider-7 > .w-slider-arrow-right { right: 1.5% !important; left: auto !important; }
+
+  /* Home four-picture gallery: a wide 429px slide caused horizontal panning
+     on 320–390px phones. Keep slide sizing tied to the viewport. */
+  .body .slider-3,
+  .body .slider-3 .mask-2,
+  .body .slider-3 .w-slide {
+    min-width: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+  .body .slider-3 .w-slider-nav { max-width: 100%; left: 0 !important; right: 0 !important; }
+  .body .footer--contact .container-3 > .image-26 {
+    display: block;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    left: auto !important;
+    right: auto !important;
+  }
+
+  /* Mobile footer: text, logo and social media links stay on-screen. */
+  .footer-mobile--home,
+  .footer-mobile--home > .footer--contact,
+  .footer-mobile--home .container {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+  }
+  .footer-mobile--home .footer-logo { width: min(100%, 400px) !important; height: auto !important; }
+  .footer-mobile--home .socials-wrapper { max-width: 100%; flex-wrap: wrap; }
+  .footer-line {
+    max-width: calc(100% - 48px) !important;
+    left: auto !important;
+    right: auto !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  /* Support narrow layouts in the Projects, About and Contact pages. */
+  .body-3 .heading-44 { font-size: clamp(1.35rem, 5vw, 2.5rem) !important; }
+  .body-3 .div-block-25,
+  .body-3 .image-51,
+  .body-3 .image-61 {
+    width: auto !important;
+    max-width: 100% !important;
+    left: auto !important;
+    right: auto !important;
+  }
+  .body-4 input, .body-4 select, .body-4 textarea { max-width: 100%; }
+}
+
+@media screen and (max-width: 359px) {
+  .body .slider-7 .w-slide > div:nth-child(2) > .image-46 {
+    width: 68vw !important;
+  }
+  .navbar .image-31 { max-width: 45% !important; }
+}
+
+/* Larger phones and tablets use the real full-resolution hero photograph.
+   Webflow's native tablet styles otherwise render it only in the top half
+   and expose an unrelated background image below. */
+@media screen and (min-width: 480px) and (max-width: 991px) {
+  .body .slider-7 .w-slide > div:first-child {
+    position: relative !important;
+  }
+  .body .slider-7 .w-slide > div:first-child > img {
+    display: block !important;
+    position: absolute !important;
+    inset: 0 !important;
+    width: 100% !important;
+    max-width: none !important;
+    height: 100% !important;
+    margin: 0 !important;
+    object-fit: cover !important;
+    object-position: center center !important;
+  }
+  .body .section-6 .div-block-3 {
+    max-width: 90% !important;
+    width: min(90%, 800px) !important;
+    left: auto !important;
+    right: auto !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+  .body .footer--contact.footer---contact .container-3 {
+    left: auto !important;
+    right: auto !important;
+  }
+}
+
+/* Full-width home project gallery: remove desktop-only interior padding and
+   keep photo/caption layered inside the same clipped slide. */
+@media screen and (max-width: 991px) {
+  .body .slider-3 {
+    padding: 0 !important;
+    height: min(70svh, 540px) !important;
+    min-height: 340px !important;
+    max-height: none !important;
+  }
+  .body .slider-3 .mask-2 {
+    width: 100% !important;
+    height: 100% !important;
+    max-width: 100% !important;
+  }
+  .body .slider-3 .w-slide {
+    position: relative !important;
+    width: 100% !important;
+    height: 100% !important;
+    overflow: hidden !important;
+  }
+  .body .slider-3 .w-slide .image-25 {
+    position: absolute !important;
+    inset: 0 !important;
+    width: 100% !important;
+    max-width: none !important;
+    height: 100% !important;
+    margin: 0 !important;
+    object-fit: cover !important;
+    object-position: center center !important;
+  }
+  .body .slider-3 .w-slide > .image-52 {
+    position: absolute !important;
+    top: 50% !important;
+    left: 50% !important;
+    right: auto !important;
+    bottom: auto !important;
+    translate: -50% -50%;
+    width: min(68%, 400px) !important;
+    max-width: 70% !important;
+    height: auto !important;
+    margin: 0 !important;
+    z-index: 2;
+  }
+  .body .slider-3 .w-slide > .link-block {
+    position: absolute !important;
+    inset: 0 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 100% !important;
+    height: 100% !important;
+  }
+  .body .slider-3 .w-slide > .link-block > .image-52 {
+    position: relative !important;
+    inset: auto !important;
+    translate: none !important;
+    width: min(68%, 400px) !important;
+    max-width: 70% !important;
+    height: auto !important;
+    margin: 0 !important;
+  }
+  .body .slider-3 > .slide-nav-4 {
+    left: 0 !important;
+    right: 0 !important;
+    width: 100% !important;
+  }
+}
