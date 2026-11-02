@@ -776,3 +776,131 @@ a.w-webflow-badge, .w-webflow-badge { display: none !important; }
     padding: 0 !important;
   }
 }
+
+/* Landmark Living — About mobile section boundary repair (V5)
+   The native Webflow .section-9 used top:-161px and height:16%, which
+   caused "Our Mission" to overlay the architectural drawing in .section-8.
+   Keep the drawing fully visible, then render Mission and Values in flow.
+   Phone-only: desktop / tablet >=768px and JS animations are not altered. */
+@media screen and (max-width: 767px) {
+  .body-2 > .section-8 {
+    /* V4 already established a natural-height column with its full image. */
+    margin-bottom: 0 !important;
+    overflow: visible !important;
+  }
+  .body-2 > .section-8 > .div-block-13,
+  .body-2 > .section-8 .image-35 {
+    flex-shrink: 0 !important;
+  }
+
+  .body-2 > .section-9 {
+    position: relative !important;
+    inset: auto !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    gap: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    min-height: 0 !important;
+    margin: 0 !important;
+    padding: 38px clamp(18px, 5vw, 28px) 48px !important;
+    overflow: hidden !important;
+  }
+  /* Preserve the original Mission photograph as content (rather than
+     hiding it), but place it AFTER the Mission copy in a normal column. */
+  .body-2 > .section-9 > .div-block-8 {
+    display: block !important;
+    order: 2 !important;
+    position: relative !important;
+    inset: auto !important;
+    width: min(100%, 330px) !important;
+    max-width: 100% !important;
+    height: auto !important;
+    margin: 22px auto 0 !important;
+    padding: 0 !important;
+  }
+  .body-2 > .section-9 > .div-block-8 > .image-38 {
+    display: block !important;
+    position: static !important;
+    inset: auto !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+  .body-2 > .section-9 > .div-block-9 {
+    order: 1 !important;
+    position: relative !important;
+    inset: auto !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    gap: 11px !important;
+    width: 100% !important;
+    max-width: 480px !important;
+    height: auto !important;
+    min-height: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    text-align: center !important;
+  }
+  .body-2 > .section-9 > .div-block-9 > * {
+    position: static !important;
+    inset: auto !important;
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    text-align: center !important;
+  }
+  .body-2 > .section-9 .heading-19 {
+    font-size: clamp(34px, 9vw, 46px) !important;
+    line-height: 1.12 !important;
+    margin-bottom: 7px !important;
+  }
+  .body-2 > .section-9 .heading-30 {
+    font-size: clamp(14px, 3.9vw, 17px) !important;
+    line-height: 1.5 !important;
+    margin-bottom: 14px !important;
+  }
+  .body-2 > .section-9 .heading-37,
+  .body-2 > .section-9 .heading-38,
+  .body-2 > .section-9 .heading-39,
+  .body-2 > .section-9 .heading-40 {
+    font-size: clamp(25px, 7vw, 34px) !important;
+    line-height: 1.2 !important;
+    margin-top: 12px !important;
+  }
+  .body-2 > .section-9 .text-block-8,
+  .body-2 > .section-9 .text-block-9,
+  .body-2 > .section-9 .text-block-10,
+  .body-2 > .section-9 .text-block-11 {
+    font-size: clamp(14px, 3.7vw, 16px) !important;
+    line-height: 1.5 !important;
+  }
+
+  /* Prevent the next "Our Values" panel from rising over Mission in turn. */
+  .body-2 > .section-10 {
+    position: relative !important;
+    inset: auto !important;
+    width: 100% !important;
+    height: auto !important;
+    min-height: 0 !important;
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+  }
+}
+
+/* Native 320–479px media queries also retain 17px of negative clearance
+   before Values; compensate at that specific phone size without affecting
+   larger layouts. */
+@media screen and (max-width: 479px) {
+  .body-2 > .section-10 { margin-top: 18px !important; }
+}
