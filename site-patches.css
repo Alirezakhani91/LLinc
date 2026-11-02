@@ -904,3 +904,117 @@ a.w-webflow-badge, .w-webflow-badge { display: none !important; }
 @media screen and (max-width: 479px) {
   .body-2 > .section-10 { margin-top: 18px !important; }
 }
+
+/* Landmark Living — mobile finishing refinements (V6)
+   Values/Team/Catalogue: section boundaries and visual breathing room.
+   Home: move the Modern Layouts logo below the gallery's numeric indicators.
+   These adjustments are phone-only; Webflow desktop and JS interactions remain intact. */
+@media screen and (max-width: 767px) {
+  /* The original mobile Values panel was 18% high with top:-101px and a
+     negative bottom margin. Let the content determine its actual height. */
+  .body-2 > .section-10 {
+    position: relative !important;
+    top: auto !important;
+    right: auto !important;
+    bottom: auto !important;
+    left: auto !important;
+    height: auto !important;
+    min-height: 0 !important;
+    margin: 0 !important;
+    padding: 30px 0 52px !important;
+    background-position: center center !important;
+    background-size: cover !important;
+  }
+  .body-2 > .section-10 > .div-block-46 {
+    height: auto !important;
+    min-height: 0 !important;
+    padding-bottom: 20px !important;
+  }
+
+  /* Team should begin AFTER the full Values text—not rise over its final
+     line—and the portraits get a modest amount of extra breathing room. */
+  .body-2 > .section-20 {
+    position: relative !important;
+    top: auto !important;
+    bottom: auto !important;
+    height: auto !important;
+    min-height: 0 !important;
+    margin: 0 !important;
+    padding-top: 28px !important;
+    padding-bottom: 80px !important;
+  }
+  .body-2 > .section-20 > .div-block-39 {
+    top: -24px !important;
+  }
+
+  /* The original Catalogue artwork has two layers: title/brand line
+     and the open-book image. Keep both images but place them in normal flow
+     AFTER the team slider; otherwise negative offsets hide the job titles. */
+  .body-2 > .section-11 {
+    position: relative !important;
+    inset: auto !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    gap: 16px !important;
+    width: 100% !important;
+    height: auto !important;
+    min-height: 0 !important;
+    margin: 0 !important;
+    padding: 28px 18px 50px !important;
+    overflow: visible !important;
+  }
+  .body-2 > .section-11 > .div-block-7 {
+    position: relative !important;
+    inset: auto !important;
+    display: flex !important;
+    justify-content: center !important;
+    width: 100% !important;
+    height: auto !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+  .body-2 > .section-11 .image-37 {
+    display: block !important;
+    position: static !important;
+    inset: auto !important;
+    width: min(100%, 440px) !important;
+    max-width: 100% !important;
+    height: auto !important;
+    margin: 0 auto !important;
+    padding: 0 !important;
+  }
+  .body-2 > .section-11 > .image-34 {
+    display: block !important;
+    position: static !important;
+    inset: auto !important;
+    width: min(100%, 480px) !important;
+    max-width: 100% !important;
+    height: auto !important;
+    margin: 0 auto !important;
+    padding: 0 !important;
+  }
+
+  /* The gallery dots overhang their section by about 18px, so a slightly
+     larger mobile top inset prevents them crossing the Landmark icon. */
+  .body > .section-6 {
+    padding-top: 68px !important;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  /* Retain Webflow's full team-slide height so portraits and job titles are
+     not clipped. Reduce only the excess clearance before Catalogue. */
+  .body-2 > .section-20 {
+    padding-bottom: 40px !important;
+  }
+  .body-2 > .section-11 {
+    margin-top: -270px !important;
+  }
+}
+@media screen and (min-width: 480px) and (max-width: 767px) {
+  .body-2 > .section-11 {
+    margin-top: -225px !important;
+  }
+}
