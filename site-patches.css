@@ -345,3 +345,211 @@ a.w-webflow-badge, .w-webflow-badge { display: none !important; }
     width: 100% !important;
   }
 }
+
+
+/* Landmark Living — mobile refinement 02 Nov 2026
+   Append AFTER the existing site-patches.css rules.
+   Changes are scoped to phones/small tablets; original desktop design and
+   Webflow JS animation/opacity/transform values remain untouched. */
+@media screen and (max-width: 767px) {
+  /* Projects: the original text artwork (image-61) is an entire image,
+     not selectable HTML text. Scale the original file itself, not the font. */
+  .body-3 .section-15 {
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow: hidden !important;
+  }
+  .body-3 .section-15 .div-block-25 {
+    position: relative !important;
+    left: auto !important;
+    right: auto !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    padding: 0 !important;
+    text-align: center !important;
+  }
+  .body-3 .section-15 .image-61 {
+    display: block !important;
+    position: relative !important;
+    inset: auto !important;
+    width: min(84%, 500px) !important;
+    max-width: 84% !important;
+    aspect-ratio: 4599 / 2601;
+    height: auto !important;
+    margin: 0 auto !important;
+  }
+
+  /* Home / Modern layouts: the original Webflow breakpoint left a -200px
+     wrapper, a floated logo at top:-200px, and displaced text at right:137px.
+     Use ordinary flow so icon, heading, paragraph and photograph do not collide. */
+  .body .section-6 {
+    position: relative !important;
+    inset: auto !important;
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    min-height: 0 !important;
+    margin: 0 !important;
+    padding: 54px clamp(18px, 5vw, 28px) 54px !important;
+    overflow: hidden !important;
+  }
+  .body .section-6 .div-block-11 {
+    position: relative !important;
+    inset: auto !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 26px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    min-height: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+  .body .section-6 .div-block-3 {
+    order: 0;
+    position: relative !important;
+    inset: auto !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 17px !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+    height: auto !important;
+    min-height: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    text-align: center !important;
+  }
+  .body .section-6 .image-29 {
+    position: relative !important;
+    inset: auto !important;
+    display: block !important;
+    width: 70px !important;
+    max-width: 70px !important;
+    height: auto !important;
+    margin: 0 auto !important;
+    padding: 0 !important;
+    flex: none !important;
+  }
+  .body .section-6 .heading-16 {
+    position: static !important;
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    font-size: clamp(22px, 5.8vw, 29px) !important;
+    line-height: 1.35 !important;
+    text-align: center !important;
+  }
+  .body .section-6 .heading-16 .bold-text-3 {
+    position: static !important;
+    inset: auto !important;
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    font-size: inherit !important;
+    line-height: inherit !important;
+    text-align: center !important;
+  }
+  .body .section-6 .paragraph-4 {
+    position: static !important;
+    inset: auto !important;
+    display: block !important;
+    width: 100% !important;
+    max-width: 430px !important;
+    height: auto !important;
+    margin: 8px auto 0 !important;
+    padding: 0 !important;
+    font-size: clamp(15px, 3.9vw, 17px) !important;
+    line-height: 1.6 !important;
+    text-align: left !important;
+    overflow-wrap: break-word;
+  }
+  .body .section-6 .image-27 {
+    order: 1;
+    display: block !important;
+    position: relative !important;
+    inset: auto !important;
+    width: min(100%, 440px) !important;
+    max-width: 100% !important;
+    aspect-ratio: 4583 / 4729;
+    height: auto !important;
+    margin: 4px auto 0 !important;
+    padding: 0 !important;
+  }
+
+  /* About / family photo and long paragraph: one clean vertical sequence. */
+  .body-2 .section-19 {
+    display: flex !important;
+    position: relative !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 24px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    min-height: 0 !important;
+    margin: 0 !important;
+    padding: 30px clamp(18px, 5vw, 28px) 50px !important;
+    overflow: hidden !important;
+  }
+  .body-2 .section-19 .div-block-33 {
+    position: relative !important;
+    inset: auto !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    flex: 0 0 auto !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+  .body-2 .section-19 .image-63 {
+    display: block !important;
+    position: relative !important;
+    inset: auto !important;
+    width: min(100%, 450px) !important;
+    max-width: 100% !important;
+    aspect-ratio: 4801 / 4673;
+    height: auto !important;
+    margin: 0 auto !important;
+    padding: 0 !important;
+  }
+  .body-2 .section-19 .div-block-34 {
+    position: relative !important;
+    inset: auto !important;
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+  .body-2 .section-19 .heading-32 {
+    position: static !important;
+    inset: auto !important;
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    font-size: clamp(15px, 3.9vw, 17px) !important;
+    line-height: 1.6 !important;
+    text-align: left !important;
+    overflow-wrap: break-word;
+  }
+}
