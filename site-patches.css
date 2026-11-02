@@ -1018,3 +1018,35 @@ a.w-webflow-badge, .w-webflow-badge { display: none !important; }
     margin-top: -225px !important;
   }
 }
+/* V7 — About mobile: keep the entire Catalogue visible before the footer.
+   The Webflow phone footer inherited margin-top:-200px AND top:-200px,
+   pulling it over the catalogue artwork. The tablet layout used a separate
+   +200px gap. Neither is appropriate after the mobile catalogue reflow. */
+@media screen and (max-width: 767px) {
+  .body-2 > .footer-mobile--about {
+    position: relative !important;
+    top: auto !important;
+    right: auto !important;
+    bottom: auto !important;
+    left: auto !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    min-height: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+  .body-2 > .footer-mobile--about > .footer--contact.footer---contact {
+    position: relative !important;
+    top: auto !important;
+    right: auto !important;
+    bottom: auto !important;
+    left: auto !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: none !important;
+    margin: 0 !important;
+  }
+}
