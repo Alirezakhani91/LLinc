@@ -1,0 +1,2 @@
+/* Brand badge disabled on self-hosted version. No layout/animation edits. */
+a.w-webflow-badge, .w-webflow-badge {display:none!important;}
