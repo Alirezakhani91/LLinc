@@ -227,118 +227,80 @@
 @media (hover: none), (pointer: coarse), (prefers-reduced-motion: reduce) {
   .ll-pointer-echo { display: none !important; }
 }
-</style><style id="llp-project-carousel-style">/* Landmark Living | Projects cinematic carousel V2 — scoped to #our-projects only. */
-.llp-showcase{
- --llp-card-width:min(47vw,900px);--llp-card-gap:clamp(68px,7.1vw,136px);
- width:100%;max-width:100%;position:relative;isolation:isolate;overflow:hidden;
- background:linear-gradient(to bottom,#c1b6ab 0%,#c1b6ab 74%,#f2f2f2 74%,#f2f2f2 100%);
- padding:0 0 clamp(65px,5.5vw,95px);margin:0;
+</style><style id="llp-project-carousel-style">/* Landmark Living: Projects carousel V3 - preserve original hero, brand fonts and all site-patches */
+.body > .section-4:has(+ #our-projects){margin-bottom:-155px!important}
+.body > #our-projects + .section-6{margin-top:0!important;top:0!important}
+#our-projects{--llp-card-width:min(48vw,880px);--llp-card-gap:clamp(62px,7vw,132px);
+ position:relative!important;z-index:30!important;isolation:isolate;width:100%!important;max-width:100%!important;
+ margin:0!important;overflow:hidden!important;box-sizing:border-box;
+ padding:clamp(30px,3.5vw,56px) 0 clamp(40px,4vw,70px)!important;
+ background:linear-gradient(to bottom,#c1b6ab 0%,#c1b6ab 75%,#f0f0f0 75%,#f0f0f0 100%)!important;
 }
-.llp-showcase *, .llp-showcase *::before,.llp-showcase *::after{box-sizing:border-box}
-.llp-showcase .llp-section-heading{
- display:block;position:relative;z-index:2;width:min(830px,96vw);max-width:none;height:auto;
- margin:-36px auto -46px;pointer-events:none;
-}
-.llp-showcase .llp-window{position:relative;width:100%;height:calc(var(--llp-card-width)*.698 + 84px);overflow:visible}
-.llp-showcase .llp-track{position:absolute;top:0;left:0;display:flex;align-items:flex-start;gap:var(--llp-card-gap);width:max-content;max-width:none;will-change:transform;visibility:hidden}
-.llp-showcase .llp-card{
- position:relative;flex:0 0 var(--llp-card-width);width:var(--llp-card-width);
- height:calc(var(--llp-card-width)*.698);margin:0;min-width:0;display:block;isolation:isolate;
- transform:scale(.965);opacity:.72;transition:transform 1020ms cubic-bezier(.24,.76,.2,1),opacity 1020ms ease;
- overflow:visible;
-}
-.llp-showcase .llp-card.is-active{transform:scale(1);opacity:1}
-.llp-showcase .llp-card .llp-photo{
- position:absolute;inset:0;width:100%;max-width:100%;height:100%;object-fit:cover;display:block;
- transition:filter 1100ms ease;filter:saturate(.84) brightness(.91);
-}
-.llp-showcase .llp-card.is-active .llp-photo{filter:saturate(1) brightness(1)}
-.llp-showcase .llp-darken{position:absolute;inset:0;background:rgba(14,13,12,.17);pointer-events:none;z-index:1}
-.llp-showcase .llp-frame{
- position:absolute;left:12.3%;right:12.3%;top:26%;height:87%;z-index:2;pointer-events:none;
- border:1px solid rgba(255,255,255,.67);
- background:linear-gradient(to bottom,rgba(0,0,0,.42) 0%,rgba(0,0,0,.42) 85%,transparent 85%);
-}
-.llp-showcase .llp-visit{
- position:absolute;top:20.3%;left:50%;transform:translateX(-50%);z-index:4;
- display:inline-block;white-space:nowrap;text-decoration:none;
- background:#fff;color:#2a2928;padding:1rem 1.95rem;
- font-family:Arial,Helvetica,sans-serif;font-size:clamp(11px,.8vw,13px);font-weight:600;line-height:1.2;
- transition:background-color 250ms ease,color 250ms ease, box-shadow 250ms ease;
-}
-.llp-showcase .llp-visit:hover,.llp-showcase .llp-visit:focus-visible{background:#262626;color:#fff;box-shadow:0 0 0 1px #fff}
-/* Typography: reuse Giveny from the original Webflow CSS; do not substitute Georgia for the brand font. */
-.llp-showcase .llp-name,
-.llp-showcase .llp-number{font-family:Giveny4,Giveny1,Georgia,serif!important;font-style:normal;color:#fff;text-align:center;pointer-events:none;z-index:3;display:block;position:absolute;left:5%;right:5%;font-weight:400!important;}
-.llp-showcase .llp-name{
- top:39.5%;font-size:clamp(37px,4.85vw,88px);line-height:1.13;white-space:normal;
- text-shadow:0 1px 3px rgba(0,0,0,.20);transition:opacity 870ms ease, transform 920ms cubic-bezier(.23,1,.32,1);
-}
-.llp-showcase .llp-number{
- top:54.6%;font-size:clamp(145px,15.9vw,292px);line-height:.85;letter-spacing:-.04em;
- transition:opacity 950ms ease,transform 1040ms cubic-bezier(.23,1,.32,1);
-}
-.llp-showcase .llp-card:not(.is-active) .llp-name{opacity:.72;transform:translateY(9px)}
-.llp-showcase .llp-card:not(.is-active) .llp-number{opacity:.79;transform:translateY(12px)}
-.llp-showcase .llp-card.is-active .llp-name,.llp-showcase .llp-card.is-active .llp-number{opacity:1;transform:translateY(0)}
-.llp-showcase .llp-card[data-llp-project="3"] .llp-name{font-size:clamp(25px,3.35vw,58px)}
-.llp-showcase .llp-footer-controls{
- display:flex;position:relative;z-index:5;align-items:center;justify-content:center;gap:clamp(15px,1.6vw,27px);
- width:100%;height:55px;margin:0 auto;
-}
-.llp-showcase .llp-arrow{
- position:relative;display:grid;place-items:center;cursor:pointer;flex:0 0 49px;
- width:49px;height:49px;line-height:1;background:#dfdfde;border:1px solid #a19f9b;border-radius:50%;
- color:#3f3f3e;font:400 22px/1 Georgia,serif;transition:background .32s,border-color .32s,transform .32s;
- outline-offset:5px;padding:0;
-}
-.llp-showcase .llp-arrow::before{
- content:'';position:absolute;inset:-13px;border-radius:50%;background:rgba(70,70,70,.23);
- transform:scale(.62);opacity:0;z-index:-1;transition:transform 390ms cubic-bezier(.2,.75,.25,1),opacity 390ms ease;
-}
-.llp-showcase .llp-arrow:hover::before,.llp-showcase .llp-arrow:focus-visible::before{transform:scale(1);opacity:1}
-.llp-showcase .llp-arrow:hover,.llp-showcase .llp-arrow:focus-visible{background:#cccac7;border-color:#4f4d4a;transform:scale(1.07)}
-.llp-showcase .llp-arrow span{display:inline-block;transition:transform 320ms ease}
-.llp-showcase .llp-arrow-prev:hover span{transform:translateX(-3px)}
-.llp-showcase .llp-arrow-next:hover span{transform:translateX(3px)}
-.llp-showcase .llp-progress{display:flex;align-items:center;justify-content:center;gap:9px}
-.llp-showcase .llp-progress-dot{height:17px;width:45px;display:flex;align-items:center;justify-content:center;cursor:pointer;padding:0;border:0;background:transparent}
-.llp-showcase .llp-progress-dot::after{content:'';display:block;height:3px;width:100%;background:#cdcdcb;transition:background .4s,height .4s}
-.llp-showcase .llp-progress-dot[aria-current="true"]::after{background:#3e3e3e;height:4px}
-.llp-showcase .llp-progress-dot:focus-visible{outline:2px solid #333;outline-offset:3px}
-.llp-showcase .llp-back-to-top{position:absolute;right:clamp(16px,2.4vw,45px);bottom:clamp(16px,2vw,30px);z-index:3;display:grid;place-items:center;width:43px;height:43px;border:1px solid #a6a4a0;border-radius:50%;background:#e0e0de;color:#383837;cursor:pointer;font:400 22px/1 Georgia,serif;transition:background .22s,transform .22s}
-.llp-showcase .llp-back-to-top:hover,.llp-showcase .llp-back-to-top:focus-visible{background:#cbcbc8;transform:translateY(-2px)}
-.llp-showcase .llp-sr-only,.llp-showcase .llp-screen-reader{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+#our-projects *,#our-projects *::before,#our-projects *::after{box-sizing:border-box}
+#our-projects .llp-sr-only,#our-projects .llp-screen-reader{position:absolute!important;width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;overflow:hidden!important;clip:rect(0,0,0,0)!important;white-space:nowrap!important;border:0!important}
+#our-projects .llp-intro{display:flex;position:relative;z-index:2;flex-direction:column;align-items:center;justify-content:center;width:100%;max-width:100%;margin:0 auto clamp(20px,2.8vw,40px);padding:0 16px;text-align:center;color:#3e3e3e;opacity:1!important;visibility:visible!important;transform:none!important;}
+#our-projects .llp-title{margin:0 0 5px;padding:0;color:#3e3e3e;font-family:Giveny4,Giveny1,Georgia,serif!important;font-size:clamp(37px,4.4vw,68px);font-weight:400!important;line-height:1.2;text-align:center;text-transform:none;letter-spacing:0;}
+#our-projects .llp-line-logo{display:flex;align-items:center;justify-content:center;gap:8px;width:min(480px,78vw);height:67px;margin:0 auto 1px}
+#our-projects .llp-rule{height:2px;flex:1;background:#4c4c4c;min-width:0;}
+#our-projects .llp-brand-mark{width:70px!important;height:70px!important;min-width:70px;max-width:70px!important;object-fit:contain;margin:0!important;padding:0!important;opacity:1!important;}
+#our-projects .llp-subtitle{font-family:Varela,Arial,Helvetica,sans-serif!important;margin:5px 0 0;padding:0;color:#3e3e3e;font-size:clamp(16px,1.55vw,24px);font-weight:400;line-height:1.4;text-align:center}
+#our-projects .llp-window{position:relative!important;display:block;width:100%;max-width:none;height:calc(var(--llp-card-width)*.78 + 60px);margin:0;padding:0;overflow:visible!important;}
+#our-projects .llp-track{position:absolute;top:0;left:0;display:flex;flex-direction:row;align-items:flex-start;gap:var(--llp-card-gap);width:max-content!important;max-width:none;transform:translate3d(0,0,0);transition:none;will-change:transform;opacity:1!important;visibility:visible!important;}
+#our-projects .llp-card{position:relative!important;flex:0 0 var(--llp-card-width);width:var(--llp-card-width)!important;height:calc(var(--llp-card-width)*.71);min-width:0;max-width:none;margin:0!important;padding:0!important;display:block!important;overflow:visible!important;transform:scale(.965);opacity:.75;isolation:isolate;transition:transform 880ms cubic-bezier(.22,.8,.25,1),opacity 880ms ease;}
+#our-projects .llp-card.is-active{transform:scale(1);opacity:1}
+#our-projects .llp-photo{position:absolute;inset:0;width:100%!important;max-width:100%!important;height:100%!important;object-fit:cover;display:block;opacity:1!important;filter:saturate(.88) brightness(.90);transition:filter 880ms ease}
+#our-projects .llp-card.is-active .llp-photo{filter:saturate(1) brightness(1)}
+#our-projects .llp-darken{position:absolute;inset:0;background:rgba(10,9,8,.18);pointer-events:none;z-index:1}
+#our-projects .llp-frame{position:absolute;left:12%;right:12%;top:26%;height:85%;z-index:2;pointer-events:none;border:1px solid rgba(255,255,255,.85);background:linear-gradient(to bottom,rgba(0,0,0,.32) 0%,rgba(0,0,0,.32) 87%,transparent 87%,transparent 100%);}
+#our-projects .llp-visit{position:absolute;top:20%;left:50%;transform:translateX(-50%);z-index:4;display:block;white-space:nowrap;text-decoration:none;background:#fff;color:#303030;padding:12px 23px;font:600 clamp(11px,.88vw,13px)/1.15 Varela,Arial,sans-serif;transition:background .25s,color .25s}
+#our-projects .llp-visit:hover,#our-projects .llp-visit:focus-visible{background:#333;color:#fff}
+#our-projects .llp-name,#our-projects .llp-number{position:absolute!important;z-index:3;display:block;width:auto;left:4%;right:4%;text-align:center;font-family:Giveny4,Giveny1,Georgia,serif!important;font-weight:400!important;color:#fff;pointer-events:none;text-shadow:0 1px 3px #0004;}
+#our-projects .llp-name{top:41%;font-size:clamp(33px,4.6vw,77px);line-height:1.15;white-space:normal;}
+#our-projects .llp-card[data-llp-project="3"] .llp-name{font-size:clamp(24px,3.1vw,48px)}
+#our-projects .llp-number{top:53%;font-size:clamp(145px,15vw,260px);line-height:.85;letter-spacing:-.035em}
+#our-projects .llp-footer-controls{position:relative!important;z-index:50!important;display:flex!important;align-items:center;justify-content:center;gap:clamp(13px,1.5vw,24px);width:100%;height:58px;margin:0 auto;pointer-events:auto!important;}
+#our-projects .llp-arrow{display:grid;place-items:center;flex:0 0 49px;width:49px;height:49px;border:1px solid #9e9e9e;border-radius:50%;padding:0;background:#e5e5e3;color:#3e3e3e;font:400 23px/1 Georgia,serif;cursor:pointer;position:relative;z-index:60;pointer-events:auto!important;outline-offset:4px;transition:transform .25s,background .25s}
+#our-projects .llp-arrow:before{content:"";position:absolute;inset:-12px;background:#7775;border-radius:50%;transform:scale(.6);opacity:0;z-index:-1;transition:transform .3s,opacity .3s}
+#our-projects .llp-arrow:hover:before,#our-projects .llp-arrow:focus-visible:before{transform:scale(1);opacity:1}
+#our-projects .llp-arrow:hover,#our-projects .llp-arrow:focus-visible{transform:scale(1.06);background:#d5d4d0}
+#our-projects .llp-progress{display:flex;align-items:center;justify-content:center;gap:7px;position:relative;z-index:60}
+#our-projects .llp-progress-dot{display:flex;align-items:center;justify-content:center;width:43px;height:20px;padding:0;border:0;background:transparent;cursor:pointer;pointer-events:auto!important;}
+#our-projects .llp-progress-dot::after{content:"";width:100%;height:3px;background:#c8c8c8;transition:height .25s,background .25s}
+#our-projects .llp-progress-dot[aria-current="true"]::after{height:4px;background:#444}
+#our-projects .llp-back-to-top{position:absolute;z-index:50;right:clamp(15px,2.5vw,42px);bottom:clamp(16px,2vw,28px);width:42px;height:42px;display:grid;place-items:center;background:#e4e4e3;border:1px solid #aaa;border-radius:50%;font:400 22px/1 Georgia,serif;cursor:pointer;}
 @media(max-width:991px){
- .llp-showcase{--llp-card-width:72vw;--llp-card-gap:clamp(30px,5vw,70px)}
- .llp-showcase .llp-section-heading{width:min(780px,100vw);margin:-26px auto -32px}
- .llp-showcase .llp-name{font-size:clamp(29px,5.2vw,50px)}
- .llp-showcase .llp-number{font-size:clamp(115px,17vw,190px)}
- .llp-showcase .llp-card[data-llp-project="3"] .llp-name{font-size:clamp(22px,3.7vw,37px)}
+ #our-projects{--llp-card-width:72vw;--llp-card-gap:clamp(30px,5vw,66px)}
+ #our-projects .llp-name{font-size:clamp(30px,5vw,48px)}
+ #our-projects .llp-card[data-llp-project="3"] .llp-name{font-size:clamp(22px,3.5vw,34px)}
+ #our-projects .llp-number{font-size:clamp(118px,17vw,200px)}
 }
 @media(max-width:767px){
- .llp-showcase{--llp-card-width:78vw;--llp-card-gap:18px;padding-bottom:55px}
- .llp-showcase .llp-section-heading{width:100%;margin:-7px auto -18px}
- .llp-showcase .llp-window{height:calc(var(--llp-card-width)*1.08 + 55px);overflow:visible}
- .llp-showcase .llp-card{height:calc(var(--llp-card-width)*1.08)}
- .llp-showcase .llp-frame{top:24.5%;height:88%;left:10.5%;right:10.5%}
- .llp-showcase .llp-visit{top:20%;font-size:10px;padding:11px 15px}
- .llp-showcase .llp-name{top:38%;font-size:clamp(23px,6vw,36px)}
- .llp-showcase .llp-card[data-llp-project="3"] .llp-name{font-size:clamp(19px,4.8vw,29px)}
- .llp-showcase .llp-number{top:53%;font-size:clamp(112px,36vw,170px)}
- .llp-showcase .llp-arrow{width:42px;height:42px;flex-basis:42px;font-size:19px}
- .llp-showcase .llp-progress{gap:5px}
- .llp-showcase .llp-progress-dot{width:clamp(24px,8vw,38px)}
- .llp-showcase .llp-footer-controls{gap:12px}
+ #our-projects{--llp-card-width:78vw;--llp-card-gap:16px;padding:24px 0 50px!important;background:linear-gradient(to bottom,#c1b6ab 0%,#c1b6ab 78%,#f0f0f0 78%,#f0f0f0 100%)!important}
+ #our-projects .llp-intro{margin-bottom:18px}
+ #our-projects .llp-title{font-size:clamp(32px,8vw,49px)}
+ #our-projects .llp-line-logo{height:48px;width:min(310px,80vw)}
+ #our-projects .llp-brand-mark{width:51px!important;height:51px!important;min-width:51px}
+ #our-projects .llp-subtitle{font-size:clamp(14px,3.8vw,19px)}
+ #our-projects .llp-window{height:calc(var(--llp-card-width)*1.10 + 42px)}
+ #our-projects .llp-card{height:calc(var(--llp-card-width)*1.10)}
+ #our-projects .llp-frame{top:24%;height:87%;left:9%;right:9%}
+ #our-projects .llp-visit{top:19%;padding:10px 13px;font-size:10px}
+ #our-projects .llp-name{top:39%;font-size:clamp(23px,6.1vw,35px)}
+ #our-projects .llp-card[data-llp-project="3"] .llp-name{font-size:clamp(18px,4.4vw,29px)}
+ #our-projects .llp-number{top:54%;font-size:clamp(105px,37vw,170px)}
+ #our-projects .llp-arrow{width:42px;height:42px;flex-basis:42px;font-size:18px}
+ #our-projects .llp-progress-dot{width:clamp(23px,7vw,37px)}
 }
-@media(prefers-reduced-motion:reduce){
- .llp-showcase .llp-card,.llp-showcase .llp-name,.llp-showcase .llp-number,.llp-showcase .llp-arrow,.llp-showcase .llp-arrow::before{transition:none!important}
-}
+@media(prefers-reduced-motion:reduce){#our-projects .llp-track,#our-projects .llp-card,#our-projects .llp-photo{transition:none!important}}
 </style></head><body class="body"><div class="navbar w-nav" data-animation="default" data-collapse="medium" data-doc-height="1" data-duration="400" data-easing="ease" data-easing2="ease" data-no-scroll="1" data-w-id="06ab6c64-468c-b44e-1b8c-856deb96ba7f" role="banner"><img alt="" class="image-31" loading="lazy" src="cdn-assets/cdn.prod.website-files.com/688b72a095ca8d1f696fec8b/68b2c2a676f4e41ed2b5d569_logo.svg" width="173"/><div class="nav-container w-container"><nav class="nav-menu w-nav-menu" role="navigation"><div class="nav-link-wrapper"><a aria-current="page" class="nav-link w-nav-link w--current" href="index.html">Home</a><a aria-current="page" class="nav-link move-down hide-on-tab w-nav-link w--current" href="index.html">Home</a></div><div class="nav-link-wrapper"><a class="nav-link w-nav-link" href="about/index.html">About</a><a class="nav-link move-down hide-on-tab w-nav-link" href="about/index.html">About</a></div><div class="nav-link-wrapper"><a class="nav-link w-nav-link" href="projects/index.html">PROJECTS</a><a class="nav-link move-down hide-on-tab w-nav-link" href="projects/index.html">PROJECTS</a></div><div class="nav-link-wrapper"><a class="nav-link w-nav-link" href="blog/index.html">Contact</a><a class="nav-link move-down hide-on-tab w-nav-link" href="blog/index.html">Contact</a></div></nav><div class="menu-button w-nav-button"><div class="burger-icon w-icon-nav-menu"></div></div></div></div><div class="slider-7 w-slider ll-film-hero" data-animation="slide" data-autoplay="false" data-autoplay-limit="0" data-delay="6000" data-disable-swipe="true" data-duration="2400" data-easing="ease-in-out" data-hide-arrows="false" data-infinite="true" data-nav-spacing="3"><div class="mask-5 w-slider-mask"><div class="slide-13 w-slide" data-w-id="0149dde7-49af-02b6-4a04-9d9f7ae54d5e"><div class="div-block-27"><img alt="" class="image-56" loading="lazy" sizes="(max-width: 6758px) 100vw, 6758px" src="cdn-assets/cdn.prod.website-files.com/688b72a095ca8d1f696fec8b/68ce9a15f394ef82f957346e_z11111.jpg" srcset="cdn-assets/cdn.prod.website-files.com/688b72a095ca8d1f696fec8b/68ce9a15f394ef82f957346e_z11111-p-500.jpg 500w, cdn-assets/cdn.prod.website-files.com/688b72a095ca8d1f696fec8b/68ce9a15f394ef82f957346e_z11111-p-800.jpg 800w, cdn-assets/cdn.prod.website-files.com/688b72a095ca8d1f696fec8b/68ce9a15f394ef82f957346e_z11111-p-1080.jpg 1080w, cdn-assets/cdn.prod.website-files.com/688b72a095ca8d1f696fec8b/68ce9a15f394ef82f957346e_z11111-p-1600.jpg 1600w, cdn-assets/cdn.prod.website-files.com/688b72a095ca8d1f696fec8b/68ce9a15f394ef82f957346e_z11111-p-2000.jpg 2000w, cdn-assets/cdn.prod.website-files.com/688b72a095ca8d1f696fec8b/68ce9a15f394ef82f957346e_z11111-p-2600.jpg 2600w, cdn-assets/cdn.prod.website-files.com/688b72a095ca8d1f696fec8b/68ce9a15f394ef82f957346e_z11111.jpg 6758w"/></div><div class="div-block-28 w-clearfix"><img alt="" class="image-46" data-w-id="e45b8beb-96f1-a06a-77f0-f3b681bcca13" loading="lazy" sizes="(max-width: 2890px) 100vw, 2890px" src="cdn-assets/cdn.prod.website-files.com/688b72a095ca8d1f696fec8b/68bee83667e88a9b9ac01df5_140.webp" srcset="cdn-assets/cdn.prod.website-files.com/688b72a095ca8d1f696fec8b/68bee83667e88a9b9ac01df5_140-p-500.webp 500w, cdn-assets/cdn.prod.website-files.com/688b72a095ca8d1f696fec8b/68bee83667e88a9b9ac01df5_140-p-800.webp 800w, cdn-assets/cdn.prod.website-files.com/688b72a095ca8d1f696fec8b/68bee83667e88a9b9ac01df5_140-p-1080.webp 1080w, cdn-assets/cdn.prod.website-files.com/688b72a095ca8d1f696fec8b/68bee83667e88a9b9ac01df5_140-p-1600.webp 1600w, cdn-assets/cdn.prod.website-files.com/688b72a095ca8d1f696fec8b/68bee83667e88a9b9ac01df5_140-p-2000.webp 2000w, cdn-assets/cdn.prod.website-files.com/688b72a095ca8d1f696fec8b/68bee83667e88a9b9ac01df5_140.webp 2890w"/></div></div><div class="w-slide" data-w-id="4a82bcde-8d06-6606-1344-755135ab56c8"><div class="div-block-32"><img alt="" class="image-57" loading="lazy" sizes="(max-width: 6764px) 100vw, 6764px" src="cdn-assets/cdn.prod.website-files.com/688b72a095ca8d1f696fec8b/68c03a24b64b89a0865c4ca4_4565645665.webp" srcset="cdn-assets/cdn.prod.website-files.com/688b72a095ca8d1f696fec8b/68c03a24b64b89a0865c4ca4_4565645665-p-500.webp 500w, cdn-assets/cdn.prod.website-files.com/688b72a095ca8d1f696fec8b/68c03a24b64b89a0865c4ca4_4565645665-p-800.webp 800w, cdn-assets/cdn.prod.website-files.com/688b72a095ca8d1f696fec8b/68c03a24b64b89a0865c4ca4_4565645665-p-1080.webp 1080w, cdn-assets/cdn.prod.website-files.com/688b72a095ca8d1f696fec8b/68c03a24b64b89a0865c4ca4_4565645665-p-1600.webp 1600w, cdn-assets/cdn.prod.website-files.com/688b72a095ca8d1f696fec8b/68c03a24b64b89a0865c4ca4_4565645665-p-2000.webp 2000w, cdn-assets/cdn.prod.website-files.com/688b72a095ca8d1f696fec8b/68c03a24b64b89a0865c4ca4_4565645665-p-2600.webp 2600w, cdn-assets/cdn.prod.website-files.com/688b72a095ca8d1f696fec8b/68c03a24b64b89a0865c4ca4_4565645665-p-3200.webp 3200w, cdn-assets/cdn.prod.website-files.com/688b72a095ca8d1f696fec8b/68c03a24b64b89a0865c4ca4_4565645665.webp 6764w"/></div><div class="div-block-30 w-clearfix"><img alt="" class="image-46" data-w-id="4a82bcde-8d06-6606-1344-755135ab56cc" loading="lazy" sizes="(max-width: 2890px) 100vw, 2890px" src="cdn-assets/cdn.prod.website-files.com/688b72a095ca8d1f696fec8b/68c18a7f2b5c86a7fc957f7d_150.webp" srcset="cdn-assets/cdn.prod.website-files.com/688b72a095ca8d1f696fec8b/68c18a7f2b5c86a7fc957f7d_150-p-500.webp 500w, cdn-assets/cdn.prod.website-files.com/688b72a095ca8d1f696fec8b/68c18a7f2b5c86a7fc957f7d_150-p-800.webp 800w, cdn-assets/cdn.prod.website-files.com/688b72a095ca8d1f696fec8b/68c18a7f2b5c86a7fc957f7d_150-p-1080.webp 1080w, cdn-assets/cdn.prod.website-files.com/688b72a095ca8d1f696fec8b/68c18a7f2b5c86a7fc957f7d_150-p-1600.webp 1600w, cdn-assets/cdn.prod.website-files.com/688b72a095ca8d1f696fec8b/68c18a7f2b5c86a7fc957f7d_150-p-2000.webp 2000w, cdn-assets/cdn.prod.website-files.com/688b72a095ca8d1f696fec8b/68c18a7f2b5c86a7fc957f7d_150.webp 2890w"/></div></div><div class="w-slide" data-w-id="483a773e-d0bc-aca2-3d99-1b38066cc179"><div class="div-block-15"><img alt="" class="image-58" loading="lazy" sizes="100vw" src="cdn-assets/cdn.prod.website-files.com/688b72a095ca8d1f696fec8b/68aef5fd860526a0cf3b63b0_100.webp" srcset="cdn-assets/cdn.prod.website-files.com/688b72a095ca8d1f696fec8b/68aef5fd860526a0cf3b63b0_100-p-500.webp 500w, cdn-assets/cdn.prod.website-files.com/688b72a095ca8d1f696fec8b/68aef5fd860526a0cf3b63b0_100-p-800.webp 800w, cdn-assets/cdn.prod.website-files.com/688b72a095ca8d1f696fec8b/68aef5fd860526a0cf3b63b0_100-p-1080.webp 1080w, cdn-assets/cdn.prod.website-files.com/688b72a095ca8d1f696fec8b/68aef5fd860526a0cf3b63b0_100-p-1600.webp 1600w, cdn-assets/cdn.prod.website-files.com/688b72a095ca8d1f696fec8b/68aef5fd860526a0cf3b63b0_100-p-2000.webp 2000w, cdn-assets/cdn.prod.website-files.com/688b72a095ca8d1f696fec8b/68aef5fd860526a0cf3b63b0_100-p-2600.webp 2600w, cdn-assets/cdn.prod.website-files.com/688b72a095ca8d1f696fec8b/68aef5fd860526a0cf3b63b0_100-p-3200.webp 3200w, cdn-assets/cdn.prod.website-files.com/688b72a095ca8d1f696fec8b/68aef5fd860526a0cf3b63b0_100.webp 6792w"/></div><div class="div-block-29 w-clearfix"><img alt="" class="image-46" data-w-id="483a773e-d0bc-aca2-3d99-1b38066cc17d" loading="lazy" sizes="(max-width: 2890px) 100vw, 2890px" src="cdn-assets/cdn.prod.website-files.com/688b72a095ca8d1f696fec8b/68bee83680133ee2863eebe5_130.webp" srcset="cdn-assets/cdn.prod.website-files.com/688b72a095ca8d1f696fec8b/68bee83680133ee2863eebe5_130-p-500.webp 500w, cdn-assets/cdn.prod.website-files.com/688b72a095ca8d1f696fec8b/68bee83680133ee2863eebe5_130-p-800.webp 800w, cdn-assets/cdn.prod.website-files.com/688b72a095ca8d1f696fec8b/68bee83680133ee2863eebe5_130-p-1080.webp 1080w, cdn-assets/cdn.prod.website-files.com/688b72a095ca8d1f696fec8b/68bee83680133ee2863eebe5_130-p-1600.webp 1600w, cdn-assets/cdn.prod.website-files.com/688b72a095ca8d1f696fec8b/68bee83680133ee2863eebe5_130-p-2000.webp 2000w, cdn-assets/cdn.prod.website-files.com/688b72a095ca8d1f696fec8b/68bee83680133ee2863eebe5_130.webp 2890w"/></div></div><div class="w-slide" data-w-id="d68db060-246d-5f9d-cc6e-b26d3f69dde0"><div class="div-block-26"><img alt="" class="image-59" loading="lazy" sizes="100vw" src="cdn-assets/cdn.prod.website-files.com/688b72a095ca8d1f696fec8b/68bee89f7109bebee1c8350e_new.webp" srcset="cdn-assets/cdn.prod.website-files.com/688b72a095ca8d1f696fec8b/68bee89f7109bebee1c8350e_new-p-500.webp 500w, cdn-assets/cdn.prod.website-files.com/688b72a095ca8d1f696fec8b/68bee89f7109bebee1c8350e_new-p-800.webp 800w, cdn-assets/cdn.prod.website-files.com/688b72a095ca8d1f696fec8b/68bee89f7109bebee1c8350e_new-p-1080.webp 1080w, cdn-assets/cdn.prod.website-files.com/688b72a095ca8d1f696fec8b/68bee89f7109bebee1c8350e_new-p-1600.webp 1600w, cdn-assets/cdn.prod.website-files.com/688b72a095ca8d1f696fec8b/68bee89f7109bebee1c8350e_new-p-2000.webp 2000w, cdn-assets/cdn.prod.website-files.com/688b72a095ca8d1f696fec8b/68bee89f7109bebee1c8350e_new-p-2600.webp 2600w, cdn-assets/cdn.prod.website-files.com/688b72a095ca8d1f696fec8b/68bee89f7109bebee1c8350e_new-p-3200.webp 3200w, cdn-assets/cdn.prod.website-files.com/688b72a095ca8d1f696fec8b/68bee89f7109bebee1c8350e_new.webp 6758w"/></div><div class="div-block-31 w-clearfix"><img alt="" class="image-46" data-w-id="d68db060-246d-5f9d-cc6e-b26d3f69dde4" loading="lazy" sizes="(max-width: 2890px) 100vw, 2890px" src="cdn-assets/cdn.prod.website-files.com/688b72a095ca8d1f696fec8b/68c04c1c12bab5ce273ea726_78976765.webp" srcset="cdn-assets/cdn.prod.website-files.com/688b72a095ca8d1f696fec8b/68c04c1c12bab5ce273ea726_78976765-p-500.webp 500w, cdn-assets/cdn.prod.website-files.com/688b72a095ca8d1f696fec8b/68c04c1c12bab5ce273ea726_78976765-p-800.webp 800w, cdn-assets/cdn.prod.website-files.com/688b72a095ca8d1f696fec8b/68c04c1c12bab5ce273ea726_78976765-p-1080.webp 1080w, cdn-assets/cdn.prod.website-files.com/688b72a095ca8d1f696fec8b/68c04c1c12bab5ce273ea726_78976765-p-1600.webp 1600w, cdn-assets/cdn.prod.website-files.com/688b72a095ca8d1f696fec8b/68c04c1c12bab5ce273ea726_78976765-p-2000.webp 2000w, cdn-assets/cdn.prod.website-files.com/688b72a095ca8d1f696fec8b/68c04c1c12bab5ce273ea726_78976765.webp 2890w"/></div></div><div class="w-slide" data-w-id="b6235ff8-d78c-dbbc-7932-12b2502f11cb"><div class="div-block-23"><img alt="" class="image-60" loading="lazy" sizes="100vw" src="cdn-assets/cdn.prod.website-files.com/688b72a095ca8d1f696fec8b/68af04ad8ba7f6c1f60951ff_160.webp" srcset="cdn-assets/cdn.prod.website-files.com/688b72a095ca8d1f696fec8b/68af04ad8ba7f6c1f60951ff_160-p-500.webp 500w, cdn-assets/cdn.prod.website-files.com/688b72a095ca8d1f696fec8b/68af04ad8ba7f6c1f60951ff_160-p-800.webp 800w, cdn-assets/cdn.prod.website-files.com/688b72a095ca8d1f696fec8b/68af04ad8ba7f6c1f60951ff_160-p-1080.webp 1080w, cdn-assets/cdn.prod.website-files.com/688b72a095ca8d1f696fec8b/68af04ad8ba7f6c1f60951ff_160-p-1600.webp 1600w, cdn-assets/cdn.prod.website-files.com/688b72a095ca8d1f696fec8b/68af04ad8ba7f6c1f60951ff_160-p-2000.webp 2000w, cdn-assets/cdn.prod.website-files.com/688b72a095ca8d1f696fec8b/68af04ad8ba7f6c1f60951ff_160-p-2600.webp 2600w, cdn-assets/cdn.prod.website-files.com/688b72a095ca8d1f696fec8b/68af04ad8ba7f6c1f60951ff_160-p-3200.webp 3200w, cdn-assets/cdn.prod.website-files.com/688b72a095ca8d1f696fec8b/68af04ad8ba7f6c1f60951ff_160.webp 6759w"/></div><div class="div-block-22 w-clearfix"><img alt="" class="image-46" data-w-id="b6235ff8-d78c-dbbc-7932-12b2502f11cf" loading="lazy" sizes="(max-width: 2890px) 100vw, 2890px" src="cdn-assets/cdn.prod.website-files.com/688b72a095ca8d1f696fec8b/68bee83661a46aad44f8a8c2_170.webp" srcset="cdn-assets/cdn.prod.website-files.com/688b72a095ca8d1f696fec8b/68bee83661a46aad44f8a8c2_170-p-500.webp 500w, cdn-assets/cdn.prod.website-files.com/688b72a095ca8d1f696fec8b/68bee83661a46aad44f8a8c2_170-p-800.webp 800w, cdn-assets/cdn.prod.website-files.com/688b72a095ca8d1f696fec8b/68bee83661a46aad44f8a8c2_170-p-1080.webp 1080w, cdn-assets/cdn.prod.website-files.com/688b72a095ca8d1f696fec8b/68bee83661a46aad44f8a8c2_170-p-1600.webp 1600w, cdn-assets/cdn.prod.website-files.com/688b72a095ca8d1f696fec8b/68bee83661a46aad44f8a8c2_170-p-2000.webp 2000w, cdn-assets/cdn.prod.website-files.com/688b72a095ca8d1f696fec8b/68bee83661a46aad44f8a8c2_170.webp 2890w"/></div></div><div class="w-slide" data-w-id="a5c4f357-e2e9-af16-5fa2-50f8fd7167eb"><div class="div-block-47" data-w-id="1454ea5d-fd0b-e5d4-6768-c9c9866ac120"><img alt="" class="image-74" loading="lazy" sizes="(max-width: 3996px) 100vw, 3996px" src="cdn-assets/cdn.prod.website-files.com/688b72a095ca8d1f696fec8b/68e8f946579ff61729b92df9_z99999.jpg" srcset="cdn-assets/cdn.prod.website-files.com/688b72a095ca8d1f696fec8b/68e8f946579ff61729b92df9_z99999-p-500.jpg 500w, cdn-assets/cdn.prod.website-files.com/688b72a095ca8d1f696fec8b/68e8f946579ff61729b92df9_z99999-p-800.jpg 800w, cdn-assets/cdn.prod.website-files.com/688b72a095ca8d1f696fec8b/68e8f946579ff61729b92df9_z99999-p-1080.jpg 1080w, cdn-assets/cdn.prod.website-files.com/688b72a095ca8d1f696fec8b/68e8f946579ff61729b92df9_z99999-p-1600.jpg 1600w, cdn-assets/cdn.prod.website-files.com/688b72a095ca8d1f696fec8b/68e8f946579ff61729b92df9_z99999-p-2000.jpg 2000w, cdn-assets/cdn.prod.website-files.com/688b72a095ca8d1f696fec8b/68e8f946579ff61729b92df9_z99999.jpg 3996w"/></div><div class="div-block-22 w-clearfix"><img alt="" class="image-46" data-w-id="a5c4f357-e2e9-af16-5fa2-50f8fd7167ef" loading="lazy" sizes="(max-width: 2890px) 100vw, 2890px" src="cdn-assets/cdn.prod.website-files.com/688b72a095ca8d1f696fec8b/68e8f9703eb715e2ff2b17a2_z102.webp" srcset="cdn-assets/cdn.prod.website-files.com/688b72a095ca8d1f696fec8b/68e8f9703eb715e2ff2b17a2_z102-p-500.webp 500w, cdn-assets/cdn.prod.website-files.com/688b72a095ca8d1f696fec8b/68e8f9703eb715e2ff2b17a2_z102-p-800.webp 800w, cdn-assets/cdn.prod.website-files.com/688b72a095ca8d1f696fec8b/68e8f9703eb715e2ff2b17a2_z102-p-1080.webp 1080w, cdn-assets/cdn.prod.website-files.com/688b72a095ca8d1f696fec8b/68e8f9703eb715e2ff2b17a2_z102-p-1600.webp 1600w, cdn-assets/cdn.prod.website-files.com/688b72a095ca8d1f696fec8b/68e8f9703eb715e2ff2b17a2_z102-p-2000.webp 2000w, cdn-assets/cdn.prod.website-files.com/688b72a095ca8d1f696fec8b/68e8f9703eb715e2ff2b17a2_z102.webp 2890w"/></div></div></div><div aria-label="Previous slide" class="w-slider-arrow-left"><span aria-hidden="true" class="ll-control-rule"></span><span aria-hidden="true" class="ll-control-label">Prev</span></div><div aria-label="Next slide" class="w-slider-arrow-right"><span aria-hidden="true" class="ll-control-label">Next</span><span aria-hidden="true" class="ll-control-rule"></span></div><div class="slide-nav-6 w-slider-nav w-round w-num"></div>
 <button aria-label="Scroll down to explore the site" class="ll-mouse-cue" type="button"><span aria-hidden="true" class="ll-mouse-wheel"></span></button>
 <div aria-label="Hero slideshow progress" class="ll-slide-index"><div aria-label="Slide 1 of 6" aria-live="polite" class="ll-readout"><span class="ll-current">1</span><span aria-hidden="true" class="ll-slash"></span><span class="ll-total">6</span></div><div aria-hidden="true" class="ll-timeline"><span class="ll-timeline-fill"></span></div></div>
-</div><section class="section-4"><div class="card-flex"><div class="large-card"><div class="card-text-block slide-from-left-animation"><img alt="" class="image-41" loading="lazy" sizes="90px" src="cdn-assets/cdn.prod.website-files.com/688b72a095ca8d1f696fec8b/68b2d9a6fdedba29db43b658_657657.webp" srcset="cdn-assets/cdn.prod.website-files.com/688b72a095ca8d1f696fec8b/68b2d9a6fdedba29db43b658_657657-p-500.webp 500w, cdn-assets/cdn.prod.website-files.com/688b72a095ca8d1f696fec8b/68b2d9a6fdedba29db43b658_657657.webp 734w" width="90"/><h2 class="heading-2">Home is where comfort begins</h2><h1 class="heading-26">At Landmark Living, home is More than a private space, it’s the foundation of a vibrant community. Here, comfort begins with modern design, thoughtful amenities, and a sense of belonging that transforms everyday living into something extraordinary.<br/></h1><a class="button-with-circle-icon w-inline-block" data-w-id="5636032a-1271-e473-ecbe-20e393bd2447" href="#"><p class="button-text">Explore</p><p class="button-text move-down hide-on-tab">Explore</p><div class="circle-absolute"></div></a></div></div><div class="features-image-wrapper flip-from-left-animation"><img alt="" class="image-6" data-w-id="967077d1-ba2b-95eb-8987-7de603b1a617" height="1900" loading="lazy" sizes="(max-width: 479px) 100vw, 450px" src="cdn-assets/cdn.prod.website-files.com/688b72a095ca8d1f696fec8b/68dc09ada9eb6c343b004e94_z454566.webp" srcset="cdn-assets/cdn.prod.website-files.com/688b72a095ca8d1f696fec8b/68dc09ada9eb6c343b004e94_z454566-p-500.webp 500w, cdn-assets/cdn.prod.website-files.com/688b72a095ca8d1f696fec8b/68dc09ada9eb6c343b004e94_z454566-p-800.webp 800w, cdn-assets/cdn.prod.website-files.com/688b72a095ca8d1f696fec8b/68dc09ada9eb6c343b004e94_z454566-p-1080.webp 1080w, cdn-assets/cdn.prod.website-files.com/688b72a095ca8d1f696fec8b/68dc09ada9eb6c343b004e94_z454566-p-1600.webp 1600w, cdn-assets/cdn.prod.website-files.com/688b72a095ca8d1f696fec8b/68dc09ada9eb6c343b004e94_z454566-p-2000.webp 2000w, cdn-assets/cdn.prod.website-files.com/688b72a095ca8d1f696fec8b/68dc09ada9eb6c343b004e94_z454566-p-2600.webp 2600w, cdn-assets/cdn.prod.website-files.com/688b72a095ca8d1f696fec8b/68dc09ada9eb6c343b004e94_z454566-p-3200.webp 3200w, cdn-assets/cdn.prod.website-files.com/688b72a095ca8d1f696fec8b/68dc09ada9eb6c343b004e94_z454566.webp 4802w" style="opacity:0" width="450"/></div></div></section><section aria-label="Our projects" class="llp-showcase" id="our-projects"><h2 class="llp-sr-only">Our Projects</h2><img alt="Projects — A New Way of Design" class="llp-section-heading" decoding="async" height="1170" loading="lazy" src="cdn-assets/cdn.prod.website-files.com/688b72a095ca8d1f696fec8b/68c0369191cc974c5df4be74_2132132.webp" width="2835"/><div aria-label="Landmark Living projects" aria-roledescription="carousel" class="llp-window"><div class="llp-track" id="llpTrack"><article aria-label="1 of 4: Sydney Street" aria-roledescription="slide" class="llp-card" data-llp-project="0">
-<img alt="Sydney Street project" class="llp-photo" decoding="async" loading="lazy" sizes="(max-width: 767px) 78vw, (max-width: 991px) 72vw, min(44.8vw, 860px)" src="cdn-assets/cdn.prod.website-files.com/688b72a095ca8d1f696fec8b/6900dfc4b56b2a346b41b884_2.webp" srcset="cdn-assets/cdn.prod.website-files.com/688b72a095ca8d1f696fec8b/6900dfc4b56b2a346b41b884_2-p-500.webp 500w, cdn-assets/cdn.prod.website-files.com/688b72a095ca8d1f696fec8b/6900dfc4b56b2a346b41b884_2-p-800.webp 800w, cdn-assets/cdn.prod.website-files.com/688b72a095ca8d1f696fec8b/6900dfc4b56b2a346b41b884_2-p-1080.webp 1080w, cdn-assets/cdn.prod.website-files.com/688b72a095ca8d1f696fec8b/6900dfc4b56b2a346b41b884_2-p-1600.webp 1600w, cdn-assets/cdn.prod.website-files.com/688b72a095ca8d1f696fec8b/6900dfc4b56b2a346b41b884_2-p-2000.webp 2000w, cdn-assets/cdn.prod.website-files.com/688b72a095ca8d1f696fec8b/6900dfc4b56b2a346b41b884_2-p-2600.webp 2600w, cdn-assets/cdn.prod.website-files.com/688b72a095ca8d1f696fec8b/6900dfc4b56b2a346b41b884_2-p-3200.webp 3200w, cdn-assets/cdn.prod.website-files.com/688b72a095ca8d1f696fec8b/6900dfc4b56b2a346b41b884_2.webp 4611w"/>
+</div><section class="section-4"><div class="card-flex"><div class="large-card"><div class="card-text-block slide-from-left-animation"><img alt="" class="image-41" loading="lazy" sizes="90px" src="cdn-assets/cdn.prod.website-files.com/688b72a095ca8d1f696fec8b/68b2d9a6fdedba29db43b658_657657.webp" srcset="cdn-assets/cdn.prod.website-files.com/688b72a095ca8d1f696fec8b/68b2d9a6fdedba29db43b658_657657-p-500.webp 500w, cdn-assets/cdn.prod.website-files.com/688b72a095ca8d1f696fec8b/68b2d9a6fdedba29db43b658_657657.webp 734w" width="90"/><h2 class="heading-2">Home is where comfort begins</h2><h1 class="heading-26">At Landmark Living, home is More than a private space, it’s the foundation of a vibrant community. Here, comfort begins with modern design, thoughtful amenities, and a sense of belonging that transforms everyday living into something extraordinary.<br/></h1><a class="button-with-circle-icon w-inline-block" data-w-id="5636032a-1271-e473-ecbe-20e393bd2447" href="#"><p class="button-text">Explore</p><p class="button-text move-down hide-on-tab">Explore</p><div class="circle-absolute"></div></a></div></div><div class="features-image-wrapper flip-from-left-animation"><img alt="" class="image-6" data-w-id="967077d1-ba2b-95eb-8987-7de603b1a617" height="1900" loading="lazy" sizes="(max-width: 479px) 100vw, 450px" src="cdn-assets/cdn.prod.website-files.com/688b72a095ca8d1f696fec8b/68dc09ada9eb6c343b004e94_z454566.webp" srcset="cdn-assets/cdn.prod.website-files.com/688b72a095ca8d1f696fec8b/68dc09ada9eb6c343b004e94_z454566-p-500.webp 500w, cdn-assets/cdn.prod.website-files.com/688b72a095ca8d1f696fec8b/68dc09ada9eb6c343b004e94_z454566-p-800.webp 800w, cdn-assets/cdn.prod.website-files.com/688b72a095ca8d1f696fec8b/68dc09ada9eb6c343b004e94_z454566-p-1080.webp 1080w, cdn-assets/cdn.prod.website-files.com/688b72a095ca8d1f696fec8b/68dc09ada9eb6c343b004e94_z454566-p-1600.webp 1600w, cdn-assets/cdn.prod.website-files.com/688b72a095ca8d1f696fec8b/68dc09ada9eb6c343b004e94_z454566-p-2000.webp 2000w, cdn-assets/cdn.prod.website-files.com/688b72a095ca8d1f696fec8b/68dc09ada9eb6c343b004e94_z454566-p-2600.webp 2600w, cdn-assets/cdn.prod.website-files.com/688b72a095ca8d1f696fec8b/68dc09ada9eb6c343b004e94_z454566-p-3200.webp 3200w, cdn-assets/cdn.prod.website-files.com/688b72a095ca8d1f696fec8b/68dc09ada9eb6c343b004e94_z454566.webp 4802w" style="opacity:0" width="450"/></div></div></section><section aria-label="Our projects" class="llp-showcase" id="our-projects"><h2 class="llp-sr-only">Our Projects</h2><header aria-label="Our Projects — A New Way of Design" class="llp-intro">
+<h2 class="llp-title">Projects</h2>
+<div aria-hidden="true" class="llp-line-logo"><span class="llp-rule"></span><img alt="" class="llp-brand-mark" height="84" loading="eager" src="cdn-assets/cdn.prod.website-files.com/688b72a095ca8d1f696fec8b/68b2d9a6fdedba29db43b658_657657.webp" width="84"/><span class="llp-rule"></span></div>
+<p class="llp-subtitle">A New Way of Design</p>
+</header><div aria-label="Landmark Living projects" aria-roledescription="carousel" class="llp-window"><div class="llp-track" id="llpTrack"><article aria-label="1 of 4: Sydney Street" aria-roledescription="slide" class="llp-card" data-llp-project="0">
+<img alt="Sydney Street project" class="llp-photo" decoding="async" loading="eager" sizes="(max-width: 767px) 78vw, (max-width: 991px) 72vw, min(44.8vw, 860px)" src="cdn-assets/cdn.prod.website-files.com/688b72a095ca8d1f696fec8b/6900dfc4b56b2a346b41b884_2.webp" srcset="cdn-assets/cdn.prod.website-files.com/688b72a095ca8d1f696fec8b/6900dfc4b56b2a346b41b884_2-p-500.webp 500w, cdn-assets/cdn.prod.website-files.com/688b72a095ca8d1f696fec8b/6900dfc4b56b2a346b41b884_2-p-800.webp 800w, cdn-assets/cdn.prod.website-files.com/688b72a095ca8d1f696fec8b/6900dfc4b56b2a346b41b884_2-p-1080.webp 1080w, cdn-assets/cdn.prod.website-files.com/688b72a095ca8d1f696fec8b/6900dfc4b56b2a346b41b884_2-p-1600.webp 1600w, cdn-assets/cdn.prod.website-files.com/688b72a095ca8d1f696fec8b/6900dfc4b56b2a346b41b884_2-p-2000.webp 2000w, cdn-assets/cdn.prod.website-files.com/688b72a095ca8d1f696fec8b/6900dfc4b56b2a346b41b884_2-p-2600.webp 2600w, cdn-assets/cdn.prod.website-files.com/688b72a095ca8d1f696fec8b/6900dfc4b56b2a346b41b884_2-p-3200.webp 3200w, cdn-assets/cdn.prod.website-files.com/688b72a095ca8d1f696fec8b/6900dfc4b56b2a346b41b884_2.webp 4611w"/>
 <span aria-hidden="true" class="llp-darken"></span>
 <span aria-hidden="true" class="llp-frame"></span>
 <a class="llp-visit" href="projects/">EXPLORE PROJECT</a>
@@ -368,7 +330,7 @@
 <a class="llp-visit" href="projects/">EXPLORE PROJECT</a>
 <span class="llp-name">Sydney Street</span><span aria-hidden="true" class="llp-number">1</span>
 </article><article aria-label="2 of 4: LM460" aria-roledescription="slide" class="llp-card" data-llp-project="1">
-<img alt="LM460 project" class="llp-photo" decoding="async" loading="eager" sizes="(max-width: 767px) 78vw, (max-width: 991px) 72vw, min(44.8vw, 860px)" src="cdn-assets/cdn.prod.website-files.com/688b72a095ca8d1f696fec8b/6900dfdfe83084a5d5286896_00.webp" srcset="cdn-assets/cdn.prod.website-files.com/688b72a095ca8d1f696fec8b/6900dfdfe83084a5d5286896_00-p-500.webp 500w, cdn-assets/cdn.prod.website-files.com/688b72a095ca8d1f696fec8b/6900dfdfe83084a5d5286896_00-p-800.webp 800w, cdn-assets/cdn.prod.website-files.com/688b72a095ca8d1f696fec8b/6900dfdfe83084a5d5286896_00-p-1080.webp 1080w, cdn-assets/cdn.prod.website-files.com/688b72a095ca8d1f696fec8b/6900dfdfe83084a5d5286896_00-p-1600.webp 1600w, cdn-assets/cdn.prod.website-files.com/688b72a095ca8d1f696fec8b/6900dfdfe83084a5d5286896_00-p-2000.webp 2000w, cdn-assets/cdn.prod.website-files.com/688b72a095ca8d1f696fec8b/6900dfdfe83084a5d5286896_00-p-2600.webp 2600w, cdn-assets/cdn.prod.website-files.com/688b72a095ca8d1f696fec8b/6900dfdfe83084a5d5286896_00-p-3200.webp 3200w, cdn-assets/cdn.prod.website-files.com/688b72a095ca8d1f696fec8b/6900dfdfe83084a5d5286896_00.webp 4612w"/>
+<img alt="LM460 project" class="llp-photo" decoding="async" loading="lazy" sizes="(max-width: 767px) 78vw, (max-width: 991px) 72vw, min(44.8vw, 860px)" src="cdn-assets/cdn.prod.website-files.com/688b72a095ca8d1f696fec8b/6900dfdfe83084a5d5286896_00.webp" srcset="cdn-assets/cdn.prod.website-files.com/688b72a095ca8d1f696fec8b/6900dfdfe83084a5d5286896_00-p-500.webp 500w, cdn-assets/cdn.prod.website-files.com/688b72a095ca8d1f696fec8b/6900dfdfe83084a5d5286896_00-p-800.webp 800w, cdn-assets/cdn.prod.website-files.com/688b72a095ca8d1f696fec8b/6900dfdfe83084a5d5286896_00-p-1080.webp 1080w, cdn-assets/cdn.prod.website-files.com/688b72a095ca8d1f696fec8b/6900dfdfe83084a5d5286896_00-p-1600.webp 1600w, cdn-assets/cdn.prod.website-files.com/688b72a095ca8d1f696fec8b/6900dfdfe83084a5d5286896_00-p-2000.webp 2000w, cdn-assets/cdn.prod.website-files.com/688b72a095ca8d1f696fec8b/6900dfdfe83084a5d5286896_00-p-2600.webp 2600w, cdn-assets/cdn.prod.website-files.com/688b72a095ca8d1f696fec8b/6900dfdfe83084a5d5286896_00-p-3200.webp 3200w, cdn-assets/cdn.prod.website-files.com/688b72a095ca8d1f696fec8b/6900dfdfe83084a5d5286896_00.webp 4612w"/>
 <span aria-hidden="true" class="llp-darken"></span>
 <span aria-hidden="true" class="llp-frame"></span>
 <a class="llp-visit" href="projects/">EXPLORE PROJECT</a>
@@ -386,7 +348,7 @@
 <a class="llp-visit" href="https://landmarknb.com/" rel="noopener noreferrer" target="_blank">EXPLORE PROJECT</a>
 <span class="llp-name">Landmark Self Storage</span><span aria-hidden="true" class="llp-number">4</span>
 </article><article aria-label="1 of 4: Sydney Street" aria-roledescription="slide" class="llp-card" data-llp-project="0">
-<img alt="Sydney Street project" class="llp-photo" decoding="async" loading="lazy" sizes="(max-width: 767px) 78vw, (max-width: 991px) 72vw, min(44.8vw, 860px)" src="cdn-assets/cdn.prod.website-files.com/688b72a095ca8d1f696fec8b/6900dfc4b56b2a346b41b884_2.webp" srcset="cdn-assets/cdn.prod.website-files.com/688b72a095ca8d1f696fec8b/6900dfc4b56b2a346b41b884_2-p-500.webp 500w, cdn-assets/cdn.prod.website-files.com/688b72a095ca8d1f696fec8b/6900dfc4b56b2a346b41b884_2-p-800.webp 800w, cdn-assets/cdn.prod.website-files.com/688b72a095ca8d1f696fec8b/6900dfc4b56b2a346b41b884_2-p-1080.webp 1080w, cdn-assets/cdn.prod.website-files.com/688b72a095ca8d1f696fec8b/6900dfc4b56b2a346b41b884_2-p-1600.webp 1600w, cdn-assets/cdn.prod.website-files.com/688b72a095ca8d1f696fec8b/6900dfc4b56b2a346b41b884_2-p-2000.webp 2000w, cdn-assets/cdn.prod.website-files.com/688b72a095ca8d1f696fec8b/6900dfc4b56b2a346b41b884_2-p-2600.webp 2600w, cdn-assets/cdn.prod.website-files.com/688b72a095ca8d1f696fec8b/6900dfc4b56b2a346b41b884_2-p-3200.webp 3200w, cdn-assets/cdn.prod.website-files.com/688b72a095ca8d1f696fec8b/6900dfc4b56b2a346b41b884_2.webp 4611w"/>
+<img alt="Sydney Street project" class="llp-photo" decoding="async" loading="eager" sizes="(max-width: 767px) 78vw, (max-width: 991px) 72vw, min(44.8vw, 860px)" src="cdn-assets/cdn.prod.website-files.com/688b72a095ca8d1f696fec8b/6900dfc4b56b2a346b41b884_2.webp" srcset="cdn-assets/cdn.prod.website-files.com/688b72a095ca8d1f696fec8b/6900dfc4b56b2a346b41b884_2-p-500.webp 500w, cdn-assets/cdn.prod.website-files.com/688b72a095ca8d1f696fec8b/6900dfc4b56b2a346b41b884_2-p-800.webp 800w, cdn-assets/cdn.prod.website-files.com/688b72a095ca8d1f696fec8b/6900dfc4b56b2a346b41b884_2-p-1080.webp 1080w, cdn-assets/cdn.prod.website-files.com/688b72a095ca8d1f696fec8b/6900dfc4b56b2a346b41b884_2-p-1600.webp 1600w, cdn-assets/cdn.prod.website-files.com/688b72a095ca8d1f696fec8b/6900dfc4b56b2a346b41b884_2-p-2000.webp 2000w, cdn-assets/cdn.prod.website-files.com/688b72a095ca8d1f696fec8b/6900dfc4b56b2a346b41b884_2-p-2600.webp 2600w, cdn-assets/cdn.prod.website-files.com/688b72a095ca8d1f696fec8b/6900dfc4b56b2a346b41b884_2-p-3200.webp 3200w, cdn-assets/cdn.prod.website-files.com/688b72a095ca8d1f696fec8b/6900dfc4b56b2a346b41b884_2.webp 4611w"/>
 <span aria-hidden="true" class="llp-darken"></span>
 <span aria-hidden="true" class="llp-frame"></span>
 <a class="llp-visit" href="projects/">EXPLORE PROJECT</a>
@@ -587,94 +549,37 @@
     initLandmarkFilmControls();
   }
 })();
-</script><script id="llp-project-carousel-script">/* Landmark Living — Our Projects reference-style carousel V2. Independent of the hero slider. */
+</script><script id="llp-project-carousel-script">/* LLinc Our Projects V3: independent, resilient animated carousel */
 (function(){
  'use strict';
- const root=document.querySelector('#our-projects'); if(!root)return;
- const viewport=root.querySelector('.llp-window'), track=root.querySelector('#llpTrack');
- const cards=[...track.querySelectorAll('.llp-card')], dots=[...root.querySelectorAll('.llp-progress-dot')];
- const announce=root.querySelector('#llpAnnouncer');
- const names=['Sydney Street','LM460','Millennium Drive','Landmark Self Storage'];
- const total=4, reduceMotion=matchMedia('(prefers-reduced-motion: reduce)');
- const duration=1000, ease='cubic-bezier(.23,.92,.25,1)';
- let index=total, busy=false, activeAnim=null, touchX=null;
- function normalized(){return (index%total+total)%total}
- function positionFor(pos){
-   const w=cards[0].offsetWidth; // layout width, not the CSS-scaled visual width
-   const gap=parseFloat(getComputedStyle(track).columnGap)||0;
-   return viewport.clientWidth/2-((w+gap)*pos+w/2);
+ function start(){
+  const root=document.getElementById('our-projects');if(!root||root.dataset.llpReady==='1')return;
+  const viewport=root.querySelector('.llp-window'),track=root.querySelector('#llpTrack');
+  const next=root.querySelector('#llpNext'),prev=root.querySelector('#llpPrev');
+  const cards=track?[...track.querySelectorAll('.llp-card')]:[];
+  const dots=[...root.querySelectorAll('.llp-progress-dot')];
+  const live=root.querySelector('#llpAnnouncer');
+  if(!viewport||!track||!next||!prev||cards.length!==12)return;
+  root.dataset.llpReady='1';
+  const total=4,names=['Sydney Street','LM460','Millennium Drive','Landmark Self Storage'];
+  const reduced=window.matchMedia('(prefers-reduced-motion: reduce)');
+  let index=total,moving=false,finishTimer=null,startingX=null;
+  function norm(n){return ((n%total)+total)%total}
+  function target(idx){const w=cards[0].offsetWidth;const gap=parseFloat(getComputedStyle(track).columnGap)||0;return viewport.clientWidth/2-(idx*(w+gap)+w/2)}
+  function place(idx){return `translate3d(${target(idx)}px,0,0)`}
+  function annotate(){const cur=norm(index);root.dataset.activeProject=String(cur+1);dots.forEach((b,n)=>{if(n===cur)b.setAttribute('aria-current','true');else b.removeAttribute('aria-current')});cards.forEach((c,n)=>{const active=n===index;c.classList.toggle('is-active',active);c.setAttribute('aria-hidden',active?'false':'true');const a=c.querySelector('a.llp-visit');if(a)a.tabIndex=active?0:-1});if(live)live.textContent=`Project ${cur+1} of ${total}: ${names[cur]}`}
+  function settle(){clearTimeout(finishTimer);finishTimer=null;track.style.transition='none';if(index>=2*total)index-=total;else if(index<total)index+=total;track.style.transform=place(index);void track.offsetWidth;moving=false;annotate()}
+  function move(n){if(moving||n===index)return;moving=true;index=n;annotate();if(reduced.matches){settle();return}track.style.transition='transform 940ms cubic-bezier(.23,.88,.23,1)';requestAnimationFrame(()=>{track.style.transform=place(index)});finishTimer=setTimeout(settle,1050)}
+  function jump(n){let diff=n-norm(index);if(diff>2)diff-=4;if(diff<-2)diff+=4;move(index+diff)}
+  next.addEventListener('click',e=>{e.preventDefault();e.stopPropagation();move(index+1)});
+  prev.addEventListener('click',e=>{e.preventDefault();e.stopPropagation();move(index-1)});
+  dots.forEach((b,n)=>b.addEventListener('click',e=>{e.preventDefault();jump(n)}));
+  viewport.addEventListener('touchstart',e=>{startingX=e.changedTouches[0]?.clientX??null},{passive:true});
+  viewport.addEventListener('touchend',e=>{if(startingX==null)return;const dx=e.changedTouches[0].clientX-startingX;startingX=null;if(Math.abs(dx)>42)move(index+(dx<0?1:-1))},{passive:true});
+  root.addEventListener('keydown',e=>{if(e.key==='ArrowLeft'||e.key==='ArrowRight'){e.preventDefault();move(index+(e.key==='ArrowRight'?1:-1))}});
+  const toTop=root.querySelector('.llp-back-to-top');if(toTop)toTop.addEventListener('click',()=>window.scrollTo({top:0,behavior:reduced.matches?'instant':'smooth'}));
+  let resizeId=0;window.addEventListener('resize',()=>{cancelAnimationFrame(resizeId);resizeId=requestAnimationFrame(()=>{if(moving)settle();track.style.transition='none';track.style.transform=place(index)})},{passive:true});
+  track.style.transition='none';track.style.transform=place(index);annotate();
  }
- function translate(pos){return 'translate3d('+positionFor(pos)+'px,0,0)'}
- function render(){
-   const cur=normalized();
-   root.dataset.activeProject=String(cur+1);
-   dots.forEach((dot,i)=>{if(i===cur)dot.setAttribute('aria-current','true');else dot.removeAttribute('aria-current')});
-   cards.forEach((card,i)=>{
-     const on=i===index;
-     card.classList.toggle('is-active',on);
-     card.setAttribute('aria-hidden',on?'false':'true');
-     const a=card.querySelector('.llp-visit');if(a)a.tabIndex=on?0:-1;
-   });
-   announce.textContent='Project '+(cur+1)+' of '+total+': '+names[cur];
- }
- function resetLoop(){
-   if(index>=total*2)index-=total;
-   else if(index<total)index+=total;
-   track.style.transform=translate(index);
-   busy=false;render();
- }
- function move(to){
-   if(busy||to===index)return;
-   busy=true;
-   const from=translate(index),dest=translate(to);
-   index=to;render();
-   if(reduceMotion.matches){track.style.transform=dest;resetLoop();return}
-   if(track.animate){
-     activeAnim=track.animate([{transform:from},{transform:dest}],{duration,easing:ease,fill:'forwards'});
-     activeAnim.onfinish=()=>{
-       track.style.transform=dest;
-       activeAnim.cancel();activeAnim=null;resetLoop();
-     };
-     activeAnim.oncancel=()=>{if(activeAnim){activeAnim=null;track.style.transform=dest;resetLoop()}};
-   } else {
-     track.style.transition='transform '+duration+'ms '+ease;
-     requestAnimationFrame(()=>{track.style.transform=dest});
-     setTimeout(()=>{track.style.transition='none';resetLoop();},duration+60);
-   }
- }
- function jump(i){
-   const cur=normalized();let delta=i-cur;
-   if(delta>total/2)delta-=total;
-   if(delta<-total/2)delta+=total;
-   move(index+delta);
- }
- root.querySelector('#llpNext').addEventListener('click',()=>move(index+1));
- root.querySelector('#llpPrev').addEventListener('click',()=>move(index-1));
- dots.forEach((b,i)=>b.addEventListener('click',()=>jump(i)));
- viewport.addEventListener('touchstart',e=>{touchX=e.changedTouches[0]?.clientX??null},{passive:true});
- viewport.addEventListener('touchend',e=>{
-   if(touchX==null)return;
-   const dx=e.changedTouches[0].clientX-touchX;touchX=null;
-   if(Math.abs(dx)>45)move(index+(dx<0?1:-1));
- },{passive:true});
- root.addEventListener('keydown',e=>{
-   if(!root.contains(document.activeElement))return;
-   if(e.key==='ArrowRight'){e.preventDefault();move(index+1)}
-   if(e.key==='ArrowLeft'){e.preventDefault();move(index-1)}
- });
- root.querySelector('.llp-back-to-top').addEventListener('click',()=>{
-   window.scrollTo({top:0,behavior:reduceMotion.matches?'instant':'smooth'});
- });
- let rf=0;
- window.addEventListener('resize',()=>{
-   cancelAnimationFrame(rf);
-   rf=requestAnimationFrame(()=>{
-     if(activeAnim){activeAnim.oncancel=null;activeAnim.cancel();activeAnim=null;busy=false;}
-     track.style.transform=translate(index);
-   });
- },{passive:true});
- requestAnimationFrame(()=>{
-   track.style.transform=translate(index);
-   render();track.style.visibility='visible';
- });
+ if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',start,{once:true})}else start();
 })();</script></body></html>
